@@ -1,8 +1,13 @@
+# Project Description
+
+This is a simple project to view user's album and photos using fake API - https://jsonplaceholder.typicode.com
+
 # AngularTask
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
-## Development server
+## Get it running on your Machine
+Clone the project and open the project on your terminal. Then run `npm install` to install all required dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
