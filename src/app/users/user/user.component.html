@@ -1,0 +1,31 @@
+<div class="card p-2" *ngIf="userData">
+    <div class="text-right"><a class="text-danger" [routerLink]="['/']">X</a></div>
+    <img class="img-fluid mx-auto card-img-top" style="width: 100px;" src="assets/user.png" alt="User Image">
+    <div class="card-body text-center">
+        <h5 class="card-title">{{userData.name}}</h5>
+        <p class="card-text"><b>Username:</b> {{userData.username}} | <b>Email:</b> {{userData.email}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <i class="fas fa-map-marker-alt"></i> {{userData.address['street'] + ", " + userData.address['suite'] + ", " + userData.address['city']}}
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-file-archive"></i> {{userData.address['zipcode']}}
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-phone"></i> {{userData.phone}}
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-globe"></i> {{userData.website}}
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-building"></i> {{userData.company['name'] + ", " + userData.company['catchPhrase']}}
+        </li>
+    </ul>
+    <div class="card-body">
+        <a [routerLink]="['/user/', userData.id, 'album']" class="card-link">View Album</a>
+    </div>
+</div>
+<div class="alert alert-danger" *ngIf="userData == null">
+    <h3>User was not found</h3>
+</div>

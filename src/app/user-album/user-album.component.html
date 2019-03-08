@@ -1,0 +1,20 @@
+<div class="card p-2" *ngIf="userData">
+    <img class="img-fluid mx-auto card-img-top" style="width: 100px;" src="assets/user.png" alt="User Image">
+    <div class="card-body text-center">
+        <h5 class="card-title">{{userData.name}}</h5>
+        <p class="card-text">Username: {{userData.username}} | Email: {{userData.email}}</p>
+    </div>
+    <div class="card">
+        <h5 class="card-header">
+            List of Album
+        </h5>
+        <ul class="list-group" *ngIf="userAlbums.length > 0">
+            <a [routerLink]="['/user/' + userData.id + '/album/' + album.id]" class="list-group-item list-group-item-action" *ngFor="let album of userAlbums">
+                    {{album.title}}
+                </a>
+        </ul>
+        <div class="card-body">
+            <a [routerLink]="['/user/', userData.id]" class="card-link">Back to Profile</a>
+        </div>
+    </div>
+</div>

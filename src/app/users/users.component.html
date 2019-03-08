@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="row justify-content-center mb-4">
+        <h2>User's Album and Photo Viewer</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <h5 class="card-header">
+                    List of Users
+                </h5>
+                <ul class="list-group" *ngIf="allUsers.length > 0">
+                    <a [routerLink]="['/user/', user.id]" routerLinkActive="active" class="list-group-item list-group-item-action" *ngFor="let user of allUsers">
+                        {{user.name}}
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h4 *ngIf="showDefaultMessage">Click a user to view user's detail</h4>
+            <router-outlet (activate)="toggleDefaultMessage(false)" (deactivate)="toggleDefaultMessage(true)"></router-outlet>
+        </div>
+    </div>
+</div>
